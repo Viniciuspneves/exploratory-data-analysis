@@ -2,7 +2,14 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set_theme()
 
-def plot_bar_from_column(df, column, title=None, xlabel=None, ylabel="Quantidade", figsize=(12, 6), top_n=None, rotation=0):
+def plot_bar_from_column(df,
+                         column,
+                         title=None,
+                         xlabel=None,
+                         ylabel="Quantidade",
+                         figsize=(12, 6),
+                         top_n=None,
+                         rotation=0):
     '''
     Cria um gráfico de barras mostrando o total de acidentes
 
