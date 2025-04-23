@@ -1,0 +1,45 @@
+# Templete padrão para python
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Data files 
+#*.csv
+*.tsv
+*.xls
+*.xlsx
+*.json
+
+# Logs e dumps
+*.log
+*.out
+*.bak
+*.tmp
+
+# Arquivos de configuração pessoais
+*.env
+*.DS_Store
+*.vscode/
+.idea/
+
+# Arquivos de exportação e gráficos
+#*.png
+*.jpg
+*.jpeg
+*.pdf
+*.svg
+
+# Arquivos de sistema
+Thumbs.db
+Desktop.ini
