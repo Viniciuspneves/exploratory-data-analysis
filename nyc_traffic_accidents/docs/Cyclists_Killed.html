@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6e17b908f1e09e47fb7ec223103bc028 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_6e17b908f1e09e47fb7ec223103bc028" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6e17b908f1e09e47fb7ec223103bc028 = L.map(
+                "map_6e17b908f1e09e47fb7ec223103bc028",
+                {
+                    center: [40.7128, -74.006],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0a7506f419499b69862401e607e104a1 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_0a7506f419499b69862401e607e104a1.addTo(map_6e17b908f1e09e47fb7ec223103bc028);
+        
+    
+            var heat_map_0bb364e0e9f7977743e16bdd5f6c3643 = L.heatLayer(
+                [[40.64433, -73.919914, 1.0], [40.814934, -73.91496, 1.0], [40.769283, -73.82445, 1.0], [40.78322, -73.84586, 1.0], [40.866047, -73.87207, 1.0], [40.646175, -73.920105, 1.0], [40.785294, -73.969345, 1.0], [40.819786, -73.91216, 1.0], [40.721474, -73.98383, 1.0], [40.7528, -73.979294, 1.0], [40.864655, -73.813866, 1.0], [40.79599, -73.96896, 1.0], [40.65753, -73.89797, 1.0], [40.8020705, -73.9735112, 1.0], [40.5854046, -73.9390439, 1.0], [40.741047, -73.91818, 1.0], [40.762802, -73.965675, 1.0], [40.757694, -74.000595, 1.0], [40.747654, -73.87072, 1.0], [40.647068, -73.993935, 1.0], [40.681927, -73.72874, 1.0], [40.63693, -73.91109, 1.0], [40.814266, -73.912964, 1.0], [40.83202, -73.87323, 1.0], [40.77981, -73.95035, 1.0], [40.86755, -73.86151, 1.0], [40.780174, -73.95932, 1.0], [40.658577, -73.89063, 1.0], [40.64453, -73.94599, 1.0], [40.65319, -73.96622, 1.0], [40.74595, -73.99802, 1.0], [40.627987, -73.93078, 1.0], [40.72616, -73.90012, 1.0], [40.772987, -73.9164, 1.0], [40.672604, -73.993385, 1.0], [40.771248, -73.84374, 1.0], [40.547806, -74.15965, 1.0], [40.810352, -73.91761, 1.0], [40.707783, -73.932076, 1.0], [40.838497, -73.939835, 1.0], [40.84706, -73.84908, 1.0]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 13,
+  "radius": 5,
+  "blur": 15,
+}
+            );
+        
+    
+            heat_map_0bb364e0e9f7977743e16bdd5f6c3643.addTo(map_6e17b908f1e09e47fb7ec223103bc028);
+        
+    
+            var marker_cluster_d871b53e70fcce0df84f38fa37df5de7 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_9d64d2b695a09a90b98d948007ee5e72 = L.marker(
+                [40.64433, -73.919914],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_84242b60ac3cbeb27a608982b4b06e64 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b75a5964df9f762a2cd693c846be8756 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2925933e81d2ec4aa0d7edb1de857257 = $(`<div id="html_2925933e81d2ec4aa0d7edb1de857257" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_b75a5964df9f762a2cd693c846be8756.setContent(html_2925933e81d2ec4aa0d7edb1de857257);
+            
+        
+
+        marker_9d64d2b695a09a90b98d948007ee5e72.bindPopup(popup_b75a5964df9f762a2cd693c846be8756)
+        ;
+
+        
+    
+    
+                marker_9d64d2b695a09a90b98d948007ee5e72.setIcon(icon_84242b60ac3cbeb27a608982b4b06e64);
+            
+    
+            var marker_d9fb1dd27fdf1d8ea2a891939007c53c = L.marker(
+                [40.814934, -73.91496],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_bc008d4f059ba8a459cffe410f8d210d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d784055f8f7a7fdd06e21a3b49eaeabe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fc1874f5e4bf5226cbfd9673e3b03f95 = $(`<div id="html_fc1874f5e4bf5226cbfd9673e3b03f95" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_d784055f8f7a7fdd06e21a3b49eaeabe.setContent(html_fc1874f5e4bf5226cbfd9673e3b03f95);
+            
+        
+
+        marker_d9fb1dd27fdf1d8ea2a891939007c53c.bindPopup(popup_d784055f8f7a7fdd06e21a3b49eaeabe)
+        ;
+
+        
+    
+    
+                marker_d9fb1dd27fdf1d8ea2a891939007c53c.setIcon(icon_bc008d4f059ba8a459cffe410f8d210d);
+            
+    
+            var marker_df0e02eb3fadd749c29c735cfc142fa7 = L.marker(
+                [40.769283, -73.82445],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_d6815df4d70828eb2e498da2e21ec036 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_90be2240b00b132dd3a2e2f320c1ad48 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7288cc825c9ed9402881473153327feb = $(`<div id="html_7288cc825c9ed9402881473153327feb" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_90be2240b00b132dd3a2e2f320c1ad48.setContent(html_7288cc825c9ed9402881473153327feb);
+            
+        
+
+        marker_df0e02eb3fadd749c29c735cfc142fa7.bindPopup(popup_90be2240b00b132dd3a2e2f320c1ad48)
+        ;
+
+        
+    
+    
+                marker_df0e02eb3fadd749c29c735cfc142fa7.setIcon(icon_d6815df4d70828eb2e498da2e21ec036);
+            
+    
+            var marker_a1264df5ada384cd80e7376a1fc9adb6 = L.marker(
+                [40.78322, -73.84586],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_1d0290a7073a1a92745ffbff21dc4a5a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e01485e18a5e35027d8cfce17fb918b2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d9eb0db1a8d8de10f38aa473358fdaf3 = $(`<div id="html_d9eb0db1a8d8de10f38aa473358fdaf3" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_e01485e18a5e35027d8cfce17fb918b2.setContent(html_d9eb0db1a8d8de10f38aa473358fdaf3);
+            
+        
+
+        marker_a1264df5ada384cd80e7376a1fc9adb6.bindPopup(popup_e01485e18a5e35027d8cfce17fb918b2)
+        ;
+
+        
+    
+    
+                marker_a1264df5ada384cd80e7376a1fc9adb6.setIcon(icon_1d0290a7073a1a92745ffbff21dc4a5a);
+            
+    
+            var marker_fccb89f324d3df1c16c10177a3b19216 = L.marker(
+                [40.866047, -73.87207],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_0bcda0a47ed112ab4999a4b5b8f56ff9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e267fc92fae24adc18e6996e83ea0a7a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_da095d4e4318ca3879854982e794ec85 = $(`<div id="html_da095d4e4318ca3879854982e794ec85" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_e267fc92fae24adc18e6996e83ea0a7a.setContent(html_da095d4e4318ca3879854982e794ec85);
+            
+        
+
+        marker_fccb89f324d3df1c16c10177a3b19216.bindPopup(popup_e267fc92fae24adc18e6996e83ea0a7a)
+        ;
+
+        
+    
+    
+                marker_fccb89f324d3df1c16c10177a3b19216.setIcon(icon_0bcda0a47ed112ab4999a4b5b8f56ff9);
+            
+    
+            var marker_d4789ba659b0e6d15898a44a34450756 = L.marker(
+                [40.646175, -73.920105],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_faa9859d61b39c68f01656bc0976a73b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_276e9a631bebb8d8356f377c4a24fae9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_33e4799380b794bfabd630b6c81beaa3 = $(`<div id="html_33e4799380b794bfabd630b6c81beaa3" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_276e9a631bebb8d8356f377c4a24fae9.setContent(html_33e4799380b794bfabd630b6c81beaa3);
+            
+        
+
+        marker_d4789ba659b0e6d15898a44a34450756.bindPopup(popup_276e9a631bebb8d8356f377c4a24fae9)
+        ;
+
+        
+    
+    
+                marker_d4789ba659b0e6d15898a44a34450756.setIcon(icon_faa9859d61b39c68f01656bc0976a73b);
+            
+    
+            var marker_1f1a1dc20b8a6bb731560d1dadb0c6a2 = L.marker(
+                [40.785294, -73.969345],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_a29f2ff197208b8b95dd6359718aaf9b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_11d205a23ed83d7500531ed802eccfad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a90b423d17d80d144eb80ded8363b28b = $(`<div id="html_a90b423d17d80d144eb80ded8363b28b" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_11d205a23ed83d7500531ed802eccfad.setContent(html_a90b423d17d80d144eb80ded8363b28b);
+            
+        
+
+        marker_1f1a1dc20b8a6bb731560d1dadb0c6a2.bindPopup(popup_11d205a23ed83d7500531ed802eccfad)
+        ;
+
+        
+    
+    
+                marker_1f1a1dc20b8a6bb731560d1dadb0c6a2.setIcon(icon_a29f2ff197208b8b95dd6359718aaf9b);
+            
+    
+            var marker_17a98f824e17c30b3cf4fac3f0d3b86e = L.marker(
+                [40.819786, -73.91216],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_9209541fe9a602f60358d44ffa1ecb69 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_21ef4f4905dd5a51099a64981f99e147 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_291a6a646262de9efeeb9e9c1978d5b0 = $(`<div id="html_291a6a646262de9efeeb9e9c1978d5b0" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_21ef4f4905dd5a51099a64981f99e147.setContent(html_291a6a646262de9efeeb9e9c1978d5b0);
+            
+        
+
+        marker_17a98f824e17c30b3cf4fac3f0d3b86e.bindPopup(popup_21ef4f4905dd5a51099a64981f99e147)
+        ;
+
+        
+    
+    
+                marker_17a98f824e17c30b3cf4fac3f0d3b86e.setIcon(icon_9209541fe9a602f60358d44ffa1ecb69);
+            
+    
+            var marker_df5dae8fba6d171887a7584a35c9fe36 = L.marker(
+                [40.721474, -73.98383],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_5964783aa4302be50e7c946ca1c63a1e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b57ae969f264db9337e5075d59ae53c6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b3b2ea7f69f6b6f13c1a2892858f742 = $(`<div id="html_0b3b2ea7f69f6b6f13c1a2892858f742" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_b57ae969f264db9337e5075d59ae53c6.setContent(html_0b3b2ea7f69f6b6f13c1a2892858f742);
+            
+        
+
+        marker_df5dae8fba6d171887a7584a35c9fe36.bindPopup(popup_b57ae969f264db9337e5075d59ae53c6)
+        ;
+
+        
+    
+    
+                marker_df5dae8fba6d171887a7584a35c9fe36.setIcon(icon_5964783aa4302be50e7c946ca1c63a1e);
+            
+    
+            var marker_a34b5bfcb00d6bd601aa6e038da5dda4 = L.marker(
+                [40.7528, -73.979294],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_355cd8711d000887893b2097d19cdf74 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6ae1de49e155fb29e0f2a47b689415a3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c77f7bc149f32886f3e684a60acbeeb6 = $(`<div id="html_c77f7bc149f32886f3e684a60acbeeb6" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_6ae1de49e155fb29e0f2a47b689415a3.setContent(html_c77f7bc149f32886f3e684a60acbeeb6);
+            
+        
+
+        marker_a34b5bfcb00d6bd601aa6e038da5dda4.bindPopup(popup_6ae1de49e155fb29e0f2a47b689415a3)
+        ;
+
+        
+    
+    
+                marker_a34b5bfcb00d6bd601aa6e038da5dda4.setIcon(icon_355cd8711d000887893b2097d19cdf74);
+            
+    
+            var marker_d97644362b8420049c3f119eaa83934b = L.marker(
+                [40.864655, -73.813866],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_423adc761d4a121e4f38ee36215642e2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_134fe789045ff5fe826a7a0eb30f56c9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3bcb51c2b0b82c3f92e680cfd575142b = $(`<div id="html_3bcb51c2b0b82c3f92e680cfd575142b" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_134fe789045ff5fe826a7a0eb30f56c9.setContent(html_3bcb51c2b0b82c3f92e680cfd575142b);
+            
+        
+
+        marker_d97644362b8420049c3f119eaa83934b.bindPopup(popup_134fe789045ff5fe826a7a0eb30f56c9)
+        ;
+
+        
+    
+    
+                marker_d97644362b8420049c3f119eaa83934b.setIcon(icon_423adc761d4a121e4f38ee36215642e2);
+            
+    
+            var marker_c27cb09d2ddead00a5f21f7c47b7c867 = L.marker(
+                [40.79599, -73.96896],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_2cea3b3370bcff2785c2fb68906db5c7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_07655429c0c9716e692c5dc70eb7129e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_95bda7c3bb44ef28d9e6b22f4c0fe11a = $(`<div id="html_95bda7c3bb44ef28d9e6b22f4c0fe11a" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_07655429c0c9716e692c5dc70eb7129e.setContent(html_95bda7c3bb44ef28d9e6b22f4c0fe11a);
+            
+        
+
+        marker_c27cb09d2ddead00a5f21f7c47b7c867.bindPopup(popup_07655429c0c9716e692c5dc70eb7129e)
+        ;
+
+        
+    
+    
+                marker_c27cb09d2ddead00a5f21f7c47b7c867.setIcon(icon_2cea3b3370bcff2785c2fb68906db5c7);
+            
+    
+            var marker_0337a9bbb4793c6566ee5c5e85fa7678 = L.marker(
+                [40.65753, -73.89797],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_b6374f9a83e2cf46c48f13878df49e71 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_84a00b3f73f840e7b7cb3d6e5861218b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e6a7d4db5307eff03fb1a0b6e1a926ed = $(`<div id="html_e6a7d4db5307eff03fb1a0b6e1a926ed" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_84a00b3f73f840e7b7cb3d6e5861218b.setContent(html_e6a7d4db5307eff03fb1a0b6e1a926ed);
+            
+        
+
+        marker_0337a9bbb4793c6566ee5c5e85fa7678.bindPopup(popup_84a00b3f73f840e7b7cb3d6e5861218b)
+        ;
+
+        
+    
+    
+                marker_0337a9bbb4793c6566ee5c5e85fa7678.setIcon(icon_b6374f9a83e2cf46c48f13878df49e71);
+            
+    
+            var marker_87022db42cbde22b87887aec08f7bb95 = L.marker(
+                [40.8020705, -73.9735112],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_af62efc8539fb9f710e24ef88df5ee80 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9b1d42331e1c1ff4f577afc007e5a626 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_38b37e5587e7962db11060024d3b1d96 = $(`<div id="html_38b37e5587e7962db11060024d3b1d96" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_9b1d42331e1c1ff4f577afc007e5a626.setContent(html_38b37e5587e7962db11060024d3b1d96);
+            
+        
+
+        marker_87022db42cbde22b87887aec08f7bb95.bindPopup(popup_9b1d42331e1c1ff4f577afc007e5a626)
+        ;
+
+        
+    
+    
+                marker_87022db42cbde22b87887aec08f7bb95.setIcon(icon_af62efc8539fb9f710e24ef88df5ee80);
+            
+    
+            var marker_3535f6cb5deaea38eea64f5a0cbbdea5 = L.marker(
+                [40.5854046, -73.9390439],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_471434ec844a743a101f5fe58384d755 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aa61d0189c23be0ada770c436149896f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c444cae9b515bcad8e10d2c9d13d5eb4 = $(`<div id="html_c444cae9b515bcad8e10d2c9d13d5eb4" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_aa61d0189c23be0ada770c436149896f.setContent(html_c444cae9b515bcad8e10d2c9d13d5eb4);
+            
+        
+
+        marker_3535f6cb5deaea38eea64f5a0cbbdea5.bindPopup(popup_aa61d0189c23be0ada770c436149896f)
+        ;
+
+        
+    
+    
+                marker_3535f6cb5deaea38eea64f5a0cbbdea5.setIcon(icon_471434ec844a743a101f5fe58384d755);
+            
+    
+            var marker_d34415244355eba99a5175bc20346458 = L.marker(
+                [40.741047, -73.91818],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_0268904900b9475b444ccb95099439d7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f48048de6f0439cc02181dcfa437c7ca = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7826e935604ed714defc1e44ef1cafd2 = $(`<div id="html_7826e935604ed714defc1e44ef1cafd2" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_f48048de6f0439cc02181dcfa437c7ca.setContent(html_7826e935604ed714defc1e44ef1cafd2);
+            
+        
+
+        marker_d34415244355eba99a5175bc20346458.bindPopup(popup_f48048de6f0439cc02181dcfa437c7ca)
+        ;
+
+        
+    
+    
+                marker_d34415244355eba99a5175bc20346458.setIcon(icon_0268904900b9475b444ccb95099439d7);
+            
+    
+            var marker_e4304d6b6222036d65520b0e6d0083ef = L.marker(
+                [40.762802, -73.965675],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_ab9e8d393114668cd36d8584025faf68 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5f035acedbe3dde27807cdcad10fbfc5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4f0cedc245a334695c55b17cf24e9c32 = $(`<div id="html_4f0cedc245a334695c55b17cf24e9c32" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_5f035acedbe3dde27807cdcad10fbfc5.setContent(html_4f0cedc245a334695c55b17cf24e9c32);
+            
+        
+
+        marker_e4304d6b6222036d65520b0e6d0083ef.bindPopup(popup_5f035acedbe3dde27807cdcad10fbfc5)
+        ;
+
+        
+    
+    
+                marker_e4304d6b6222036d65520b0e6d0083ef.setIcon(icon_ab9e8d393114668cd36d8584025faf68);
+            
+    
+            var marker_32a9a0572698eb08fce7cd11e550bcf8 = L.marker(
+                [40.757694, -74.000595],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_3f344685d90a64626dc883347be634ea = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3512fae71573b9e2bf6b21540373debf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_98b01b995ab213d548bad53368387c7a = $(`<div id="html_98b01b995ab213d548bad53368387c7a" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_3512fae71573b9e2bf6b21540373debf.setContent(html_98b01b995ab213d548bad53368387c7a);
+            
+        
+
+        marker_32a9a0572698eb08fce7cd11e550bcf8.bindPopup(popup_3512fae71573b9e2bf6b21540373debf)
+        ;
+
+        
+    
+    
+                marker_32a9a0572698eb08fce7cd11e550bcf8.setIcon(icon_3f344685d90a64626dc883347be634ea);
+            
+    
+            var marker_3a924993c2a0d390ee3d5318bad435de = L.marker(
+                [40.747654, -73.87072],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_0374b612b6ae8078ab2b39a9861a44b7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_460922069ea5024ae39599211d6239c3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9ff567251f762f723d08deaa9416bb37 = $(`<div id="html_9ff567251f762f723d08deaa9416bb37" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_460922069ea5024ae39599211d6239c3.setContent(html_9ff567251f762f723d08deaa9416bb37);
+            
+        
+
+        marker_3a924993c2a0d390ee3d5318bad435de.bindPopup(popup_460922069ea5024ae39599211d6239c3)
+        ;
+
+        
+    
+    
+                marker_3a924993c2a0d390ee3d5318bad435de.setIcon(icon_0374b612b6ae8078ab2b39a9861a44b7);
+            
+    
+            var marker_1b7f28e5302701567e493a13017e7508 = L.marker(
+                [40.647068, -73.993935],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_ba009f580ca39463151af9361a05c075 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_238e88cd7704c1fdd44a8ee411be7e70 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c7bcd54a5b7310f2efcd49a21ff69e0b = $(`<div id="html_c7bcd54a5b7310f2efcd49a21ff69e0b" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_238e88cd7704c1fdd44a8ee411be7e70.setContent(html_c7bcd54a5b7310f2efcd49a21ff69e0b);
+            
+        
+
+        marker_1b7f28e5302701567e493a13017e7508.bindPopup(popup_238e88cd7704c1fdd44a8ee411be7e70)
+        ;
+
+        
+    
+    
+                marker_1b7f28e5302701567e493a13017e7508.setIcon(icon_ba009f580ca39463151af9361a05c075);
+            
+    
+            var marker_b7327fad53230120f13560fa3a676213 = L.marker(
+                [40.681927, -73.72874],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_c5edc20a82ee54dc17de54b1c938e2b9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f0ebf8f400ee12bcba6bbefa9b221810 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_56a9350b0a00a83ebf6dd76e759fe8c8 = $(`<div id="html_56a9350b0a00a83ebf6dd76e759fe8c8" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_f0ebf8f400ee12bcba6bbefa9b221810.setContent(html_56a9350b0a00a83ebf6dd76e759fe8c8);
+            
+        
+
+        marker_b7327fad53230120f13560fa3a676213.bindPopup(popup_f0ebf8f400ee12bcba6bbefa9b221810)
+        ;
+
+        
+    
+    
+                marker_b7327fad53230120f13560fa3a676213.setIcon(icon_c5edc20a82ee54dc17de54b1c938e2b9);
+            
+    
+            var marker_369539d48a8ac7db5569600f2bdbf11d = L.marker(
+                [40.63693, -73.91109],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_172ceb0065031ce45b93b7a4f0b478fb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6ba44d98cdfd9bb03373ebe36368547d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2ddba92ad2796f1e38de17420db467ec = $(`<div id="html_2ddba92ad2796f1e38de17420db467ec" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_6ba44d98cdfd9bb03373ebe36368547d.setContent(html_2ddba92ad2796f1e38de17420db467ec);
+            
+        
+
+        marker_369539d48a8ac7db5569600f2bdbf11d.bindPopup(popup_6ba44d98cdfd9bb03373ebe36368547d)
+        ;
+
+        
+    
+    
+                marker_369539d48a8ac7db5569600f2bdbf11d.setIcon(icon_172ceb0065031ce45b93b7a4f0b478fb);
+            
+    
+            var marker_df81f5b7323b74c8bd36227360347355 = L.marker(
+                [40.814266, -73.912964],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_8444bfd4e0da424dc4984ab3ac6d8d67 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1fda4f661c846ce7fadece79935c70f1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_10b707b1f7aa3378c4180d9d93017236 = $(`<div id="html_10b707b1f7aa3378c4180d9d93017236" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_1fda4f661c846ce7fadece79935c70f1.setContent(html_10b707b1f7aa3378c4180d9d93017236);
+            
+        
+
+        marker_df81f5b7323b74c8bd36227360347355.bindPopup(popup_1fda4f661c846ce7fadece79935c70f1)
+        ;
+
+        
+    
+    
+                marker_df81f5b7323b74c8bd36227360347355.setIcon(icon_8444bfd4e0da424dc4984ab3ac6d8d67);
+            
+    
+            var marker_d5235fa5b181ef1c53ad3d3ea826a4a1 = L.marker(
+                [40.83202, -73.87323],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_ac2c0d36319fa220edf454ebff30c766 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_723c4b2b964048b42f3ca2f9a0b00707 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_201f6feb853b2c4d99b540552e0ccf8f = $(`<div id="html_201f6feb853b2c4d99b540552e0ccf8f" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_723c4b2b964048b42f3ca2f9a0b00707.setContent(html_201f6feb853b2c4d99b540552e0ccf8f);
+            
+        
+
+        marker_d5235fa5b181ef1c53ad3d3ea826a4a1.bindPopup(popup_723c4b2b964048b42f3ca2f9a0b00707)
+        ;
+
+        
+    
+    
+                marker_d5235fa5b181ef1c53ad3d3ea826a4a1.setIcon(icon_ac2c0d36319fa220edf454ebff30c766);
+            
+    
+            var marker_f688fb5f09ad669f5e729d684ef31f44 = L.marker(
+                [40.77981, -73.95035],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_8a43cb118f9f21264a21afa234da9960 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5a29d71208fe52e23384da269eb89522 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d775118d73bdfd455f585be6998cc160 = $(`<div id="html_d775118d73bdfd455f585be6998cc160" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_5a29d71208fe52e23384da269eb89522.setContent(html_d775118d73bdfd455f585be6998cc160);
+            
+        
+
+        marker_f688fb5f09ad669f5e729d684ef31f44.bindPopup(popup_5a29d71208fe52e23384da269eb89522)
+        ;
+
+        
+    
+    
+                marker_f688fb5f09ad669f5e729d684ef31f44.setIcon(icon_8a43cb118f9f21264a21afa234da9960);
+            
+    
+            var marker_e5b69e53583da2c6539f9dcc362979fd = L.marker(
+                [40.86755, -73.86151],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_b1eb43bea83bc5145a99643b8ee0e4ac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aed7c0fc5fd9fc477f1c719ca288122a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b07262548e847731f4cb4db5174ea95 = $(`<div id="html_0b07262548e847731f4cb4db5174ea95" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_aed7c0fc5fd9fc477f1c719ca288122a.setContent(html_0b07262548e847731f4cb4db5174ea95);
+            
+        
+
+        marker_e5b69e53583da2c6539f9dcc362979fd.bindPopup(popup_aed7c0fc5fd9fc477f1c719ca288122a)
+        ;
+
+        
+    
+    
+                marker_e5b69e53583da2c6539f9dcc362979fd.setIcon(icon_b1eb43bea83bc5145a99643b8ee0e4ac);
+            
+    
+            var marker_125078dc98061ff9549e395ef5658f7c = L.marker(
+                [40.780174, -73.95932],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_975b185fd21ab685c15b165be97a02cb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4b9ccfa6e8deab51bac6c8985ef8bd0e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_45039bef1c80f15b8976ce426c84d677 = $(`<div id="html_45039bef1c80f15b8976ce426c84d677" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_4b9ccfa6e8deab51bac6c8985ef8bd0e.setContent(html_45039bef1c80f15b8976ce426c84d677);
+            
+        
+
+        marker_125078dc98061ff9549e395ef5658f7c.bindPopup(popup_4b9ccfa6e8deab51bac6c8985ef8bd0e)
+        ;
+
+        
+    
+    
+                marker_125078dc98061ff9549e395ef5658f7c.setIcon(icon_975b185fd21ab685c15b165be97a02cb);
+            
+    
+            var marker_105f8f00ecc2da81874c7849a4f7e5a4 = L.marker(
+                [40.658577, -73.89063],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_1c1d88201b2d302255bb536cd0abf1f1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f703ded0d93a8bddaeb3c4fbb7089abc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_07ba850b812488400e9f1a3f4b6499ab = $(`<div id="html_07ba850b812488400e9f1a3f4b6499ab" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_f703ded0d93a8bddaeb3c4fbb7089abc.setContent(html_07ba850b812488400e9f1a3f4b6499ab);
+            
+        
+
+        marker_105f8f00ecc2da81874c7849a4f7e5a4.bindPopup(popup_f703ded0d93a8bddaeb3c4fbb7089abc)
+        ;
+
+        
+    
+    
+                marker_105f8f00ecc2da81874c7849a4f7e5a4.setIcon(icon_1c1d88201b2d302255bb536cd0abf1f1);
+            
+    
+            var marker_7163aba5fcf6bc25a68bbf31d3ade2f8 = L.marker(
+                [40.64453, -73.94599],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_9732669173da174bc6bb92b4c49c9b34 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b454064bb1f5d8054771ff87b91c3e06 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_79eab0e4593bcc259b5ba004e812f3b5 = $(`<div id="html_79eab0e4593bcc259b5ba004e812f3b5" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_b454064bb1f5d8054771ff87b91c3e06.setContent(html_79eab0e4593bcc259b5ba004e812f3b5);
+            
+        
+
+        marker_7163aba5fcf6bc25a68bbf31d3ade2f8.bindPopup(popup_b454064bb1f5d8054771ff87b91c3e06)
+        ;
+
+        
+    
+    
+                marker_7163aba5fcf6bc25a68bbf31d3ade2f8.setIcon(icon_9732669173da174bc6bb92b4c49c9b34);
+            
+    
+            var marker_dbceb430e2bb4d224d330792400f4846 = L.marker(
+                [40.65319, -73.96622],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_3ba963afca747606c6202b26fc9ae9f2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_364cdd0d8ae802b66d45ebd0ff689ca7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dee5957f87136a38eaf7e45dbd48024c = $(`<div id="html_dee5957f87136a38eaf7e45dbd48024c" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_364cdd0d8ae802b66d45ebd0ff689ca7.setContent(html_dee5957f87136a38eaf7e45dbd48024c);
+            
+        
+
+        marker_dbceb430e2bb4d224d330792400f4846.bindPopup(popup_364cdd0d8ae802b66d45ebd0ff689ca7)
+        ;
+
+        
+    
+    
+                marker_dbceb430e2bb4d224d330792400f4846.setIcon(icon_3ba963afca747606c6202b26fc9ae9f2);
+            
+    
+            var marker_97c4b653ff763d1afb9a9f15a1a97247 = L.marker(
+                [40.74595, -73.99802],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_08d13d50f6769b85304949952fe73765 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_25084bb91a99b9b6ebdb0bf9ce96d4ba = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bf3af3e0ed2ea4ed68ca4c97cfddbbaa = $(`<div id="html_bf3af3e0ed2ea4ed68ca4c97cfddbbaa" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_25084bb91a99b9b6ebdb0bf9ce96d4ba.setContent(html_bf3af3e0ed2ea4ed68ca4c97cfddbbaa);
+            
+        
+
+        marker_97c4b653ff763d1afb9a9f15a1a97247.bindPopup(popup_25084bb91a99b9b6ebdb0bf9ce96d4ba)
+        ;
+
+        
+    
+    
+                marker_97c4b653ff763d1afb9a9f15a1a97247.setIcon(icon_08d13d50f6769b85304949952fe73765);
+            
+    
+            var marker_68fe6790f6c47a1ff8fdcd2050399a47 = L.marker(
+                [40.627987, -73.93078],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_f7cb0c560f020fadae8f279ce09ccfe6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2e1cdd1ea7c5416c5b9fc91cc2959dbd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_270c78b31417ec9df6abd71a01d68f3c = $(`<div id="html_270c78b31417ec9df6abd71a01d68f3c" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_2e1cdd1ea7c5416c5b9fc91cc2959dbd.setContent(html_270c78b31417ec9df6abd71a01d68f3c);
+            
+        
+
+        marker_68fe6790f6c47a1ff8fdcd2050399a47.bindPopup(popup_2e1cdd1ea7c5416c5b9fc91cc2959dbd)
+        ;
+
+        
+    
+    
+                marker_68fe6790f6c47a1ff8fdcd2050399a47.setIcon(icon_f7cb0c560f020fadae8f279ce09ccfe6);
+            
+    
+            var marker_cfb76a040bc21460e32d22a426e5fb11 = L.marker(
+                [40.72616, -73.90012],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_3b280f0bcf9eeae75263c151b24234a4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9b999e06cfcd312b9be990f5783300ec = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0ac88aef38d88a7cbde2d4e9f93d4654 = $(`<div id="html_0ac88aef38d88a7cbde2d4e9f93d4654" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_9b999e06cfcd312b9be990f5783300ec.setContent(html_0ac88aef38d88a7cbde2d4e9f93d4654);
+            
+        
+
+        marker_cfb76a040bc21460e32d22a426e5fb11.bindPopup(popup_9b999e06cfcd312b9be990f5783300ec)
+        ;
+
+        
+    
+    
+                marker_cfb76a040bc21460e32d22a426e5fb11.setIcon(icon_3b280f0bcf9eeae75263c151b24234a4);
+            
+    
+            var marker_e33393ab520877c92478b0814a0b8e9a = L.marker(
+                [40.772987, -73.9164],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_47c92cd606793678f0ecb7cdfbcd374d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a93e51e9de66a0d84cd607bad34889c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d77b086ac908c81765c470d1bf24bb85 = $(`<div id="html_d77b086ac908c81765c470d1bf24bb85" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_a93e51e9de66a0d84cd607bad34889c7.setContent(html_d77b086ac908c81765c470d1bf24bb85);
+            
+        
+
+        marker_e33393ab520877c92478b0814a0b8e9a.bindPopup(popup_a93e51e9de66a0d84cd607bad34889c7)
+        ;
+
+        
+    
+    
+                marker_e33393ab520877c92478b0814a0b8e9a.setIcon(icon_47c92cd606793678f0ecb7cdfbcd374d);
+            
+    
+            var marker_609573edebf893de214f232173e4f120 = L.marker(
+                [40.672604, -73.993385],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_0a7549916645065f678c9a185c060168 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4184aac07e5f72df152af8896d67914e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b9945a117f602f7c7120e2c83f41a634 = $(`<div id="html_b9945a117f602f7c7120e2c83f41a634" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_4184aac07e5f72df152af8896d67914e.setContent(html_b9945a117f602f7c7120e2c83f41a634);
+            
+        
+
+        marker_609573edebf893de214f232173e4f120.bindPopup(popup_4184aac07e5f72df152af8896d67914e)
+        ;
+
+        
+    
+    
+                marker_609573edebf893de214f232173e4f120.setIcon(icon_0a7549916645065f678c9a185c060168);
+            
+    
+            var marker_31304d24aa56e888c92d28f698d05b82 = L.marker(
+                [40.771248, -73.84374],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_0b4e675543a6c985dc2a8e46b24b75c5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_661ae45bc89a6df6ebbd3469cd4192bc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_95e3541d9e05c98c53d944b0b74863c8 = $(`<div id="html_95e3541d9e05c98c53d944b0b74863c8" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_661ae45bc89a6df6ebbd3469cd4192bc.setContent(html_95e3541d9e05c98c53d944b0b74863c8);
+            
+        
+
+        marker_31304d24aa56e888c92d28f698d05b82.bindPopup(popup_661ae45bc89a6df6ebbd3469cd4192bc)
+        ;
+
+        
+    
+    
+                marker_31304d24aa56e888c92d28f698d05b82.setIcon(icon_0b4e675543a6c985dc2a8e46b24b75c5);
+            
+    
+            var marker_624be5b32fd01e73a74a6ce93c431d72 = L.marker(
+                [40.547806, -74.15965],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_9360c590dd72d571a409fcff3ab7ca11 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1254e6ec4d02a277202c76866df417c5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_424d22fa1632f30b73ee186f98614d9a = $(`<div id="html_424d22fa1632f30b73ee186f98614d9a" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_1254e6ec4d02a277202c76866df417c5.setContent(html_424d22fa1632f30b73ee186f98614d9a);
+            
+        
+
+        marker_624be5b32fd01e73a74a6ce93c431d72.bindPopup(popup_1254e6ec4d02a277202c76866df417c5)
+        ;
+
+        
+    
+    
+                marker_624be5b32fd01e73a74a6ce93c431d72.setIcon(icon_9360c590dd72d571a409fcff3ab7ca11);
+            
+    
+            var marker_df53f77b649b6f2fb43f210e49876c31 = L.marker(
+                [40.810352, -73.91761],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_4bc222ad5e35ac678e54744203190da5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_509533225b9d47a8127a6e953905d085 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_173661a48362bb3df45bbfb47be6cde9 = $(`<div id="html_173661a48362bb3df45bbfb47be6cde9" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_509533225b9d47a8127a6e953905d085.setContent(html_173661a48362bb3df45bbfb47be6cde9);
+            
+        
+
+        marker_df53f77b649b6f2fb43f210e49876c31.bindPopup(popup_509533225b9d47a8127a6e953905d085)
+        ;
+
+        
+    
+    
+                marker_df53f77b649b6f2fb43f210e49876c31.setIcon(icon_4bc222ad5e35ac678e54744203190da5);
+            
+    
+            var marker_5a85291d79e150def5b7fdb1d23c08e7 = L.marker(
+                [40.707783, -73.932076],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_c72abc8e96efed06e7bc0b6592143bbd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3cec76a26932365e68ae281bfc674bfb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_025b6b330f8e3ae10348a56c477f11ce = $(`<div id="html_025b6b330f8e3ae10348a56c477f11ce" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_3cec76a26932365e68ae281bfc674bfb.setContent(html_025b6b330f8e3ae10348a56c477f11ce);
+            
+        
+
+        marker_5a85291d79e150def5b7fdb1d23c08e7.bindPopup(popup_3cec76a26932365e68ae281bfc674bfb)
+        ;
+
+        
+    
+    
+                marker_5a85291d79e150def5b7fdb1d23c08e7.setIcon(icon_c72abc8e96efed06e7bc0b6592143bbd);
+            
+    
+            var marker_db520a7adcfbe271755af511f2fefb28 = L.marker(
+                [40.838497, -73.939835],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_aa816840f32c60a12c386e5fa558f936 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f21835fd62f2c5c885929d5a9b5cc240 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_60ccdbdce1e0deffe097b202e7b4b3f5 = $(`<div id="html_60ccdbdce1e0deffe097b202e7b4b3f5" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_f21835fd62f2c5c885929d5a9b5cc240.setContent(html_60ccdbdce1e0deffe097b202e7b4b3f5);
+            
+        
+
+        marker_db520a7adcfbe271755af511f2fefb28.bindPopup(popup_f21835fd62f2c5c885929d5a9b5cc240)
+        ;
+
+        
+    
+    
+                marker_db520a7adcfbe271755af511f2fefb28.setIcon(icon_aa816840f32c60a12c386e5fa558f936);
+            
+    
+            var marker_4ddba9d477a93965ff8de18da564a4d0 = L.marker(
+                [40.84706, -73.84908],
+                {
+}
+            ).addTo(marker_cluster_d871b53e70fcce0df84f38fa37df5de7);
+        
+    
+            var icon_3a11f18060987f618c4972a616026e63 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_75b4e09a04db760cd5471eb1521b67d6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_97ff947b0c767adea8c4112e9d0b5e41 = $(`<div id="html_97ff947b0c767adea8c4112e9d0b5e41" style="width: 100.0%; height: 100.0%;">Cyclists Killed: 1</div>`)[0];
+                popup_75b4e09a04db760cd5471eb1521b67d6.setContent(html_97ff947b0c767adea8c4112e9d0b5e41);
+            
+        
+
+        marker_4ddba9d477a93965ff8de18da564a4d0.bindPopup(popup_75b4e09a04db760cd5471eb1521b67d6)
+        ;
+
+        
+    
+    
+                marker_4ddba9d477a93965ff8de18da564a4d0.setIcon(icon_3a11f18060987f618c4972a616026e63);
+            
+    
+            marker_cluster_d871b53e70fcce0df84f38fa37df5de7.addTo(map_6e17b908f1e09e47fb7ec223103bc028);
+        
+</script>
+</html>

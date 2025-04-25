@@ -17,7 +17,7 @@ def plot_bar_from_column(df,
     df : pandas.DataFrame
         DataFrame com os dados processados
     column : str
-        Nome da coluna do DataFrame a ser analisada
+        Nome da column do DataFrame a ser analisada
     title : str, opcional
         Título do gráfico
     xlabel : str, opcional
@@ -56,3 +56,55 @@ def plot_bar_from_column(df,
     # Layout e exibição
     ax.figure.tight_layout()
     plt.show()
+
+
+import folium
+from folium.plugins import HeatMap, MarkerCluster
+import os
+
+def folium_accident_map(df, column, min_value=1, output_dir='docs'):
+    """
+    Gera um mapa com heatmap e marcadores clusterizados para acidentes com pelo menos 1 ocorrência.
+
+    Parâmetros:
+        df (DataFrame): DataFrame com colunas 'Latitude', 'Longitude' e a coluna de interesse.
+        column (str): Nome da coluna que representa a quantidade (ex: 'Persons Killed').
+        min_value (int): Valor mínimo da coluna para filtrar os dados (padrão: 1).
+        output_dir (str): Pasta onde o mapa será salvo. Padrão: 'docs'.
+
+    Retorna:
+        folium.Map: Mapa com visualização dos acidentes.
+    """
+    # Filtra coordenadas válidas e acidentes com pelo menos 1 ocorrência
+    df_valid = df.dropna(subset=['Latitude', 'Longitude', column])
+    df_valid = df_valid[df_valid[column] >= min_value]
+
+    # Define coordenadas centrais de NYC
+    ny_coords = [40.7128, -74.0060]
+    mapa_ny = folium.Map(location=ny_coords, zoom_start=11)
+
+    # Cria o HeatMap
+    heat_data = df_valid[['Latitude', 'Longitude', column]].values.tolist()
+    HeatMap(heat_data, radius=5, max_zoom=13).add_to(mapa_ny)
+
+    # Adiciona marcadores em cluster
+    cluster = MarkerCluster().add_to(mapa_ny)
+    for _, row in df_valid.iterrows():
+        folium.Marker(
+            location=[row['Latitude'], row['Longitude']],
+            popup=f"{column}: {int(row[column])}",
+            icon=folium.Icon(color='red', icon='plus-sign')
+        ).add_to(cluster)
+
+    # Garante que a pasta de destino exista fora do notebook
+    raiz_dir = os.path.abspath(os.path.join(os.getcwd(), '../..'))  # Pega o diretório raiz
+    docs_dir = os.path.join(raiz_dir, output_dir)  # Junta com 'docs' na raiz
+    os.makedirs(docs_dir, exist_ok=True)
+
+    # Salva com nome baseado na coluna
+    nome_arquivo = f"{column.replace(' ', '_')}.html"
+    caminho_arquivo = os.path.join(docs_dir, nome_arquivo)
+    mapa_ny.save(caminho_arquivo)
+
+    return mapa_ny
+
