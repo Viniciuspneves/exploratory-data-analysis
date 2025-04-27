@@ -9,15 +9,17 @@ def plot_bar_from_column(df,
                          ylabel="Quantidade",
                          figsize=(12, 6),
                          top_n=None,
-                         rotation=0):
+                         rotation=0,
+                         percent=False,
+                         save_path=None):
     '''
-    Cria um gráfico de barras mostrando o total de acidentes
+    Cria um gráfico de barras mostrando o total de acidentes ou a porcentagem.
 
     Parameters:
     df : pandas.DataFrame
         DataFrame com os dados processados
     column : str
-        Nome da column do DataFrame a ser analisada
+        Nome da coluna do DataFrame a ser analisada
     title : str, opcional
         Título do gráfico
     xlabel : str, opcional
@@ -30,6 +32,10 @@ def plot_bar_from_column(df,
         Número máximo de categorias a exibir (ex: top 10)
     rotation : int, default=0
         Rotação dos rótulos no eixo X
+    percent : bool, default=False
+        Se True, plota as porcentagens ao invés da contagem
+    save_path : str, opcional
+        Caminho completo onde salvar a imagem. Se None, apenas exibe.
     '''
     # Conta os valores
     counts = df[column].value_counts()
@@ -37,6 +43,11 @@ def plot_bar_from_column(df,
     # Se top_n for definido, filtra os N primeiros
     if top_n is not None:
         counts = counts.head(top_n)
+
+    # Se percent for True, converte counts para porcentagem
+    if percent:
+        counts = (counts / counts.sum()) * 100
+        ylabel = "Porcentagem (%)"
 
     # Cria o gráfico
     ax = sns.barplot(x=counts.index, y=counts.values)
@@ -51,10 +62,18 @@ def plot_bar_from_column(df,
     plt.xticks(rotation=rotation)
 
     # Rótulos nas barras
-    ax.bar_label(ax.containers[0])
+    if percent:
+        ax.bar_label(ax.containers[0], fmt="%.2f%%")
+    else:
+        ax.bar_label(ax.containers[0])
 
     # Layout e exibição
     ax.figure.tight_layout()
+
+    # Salva a imagem se o caminho for fornecido
+    if save_path:
+        plt.savefig(save_path, dpi=300, bbox_inches='tight')
+
     plt.show()
 
 
