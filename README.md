@@ -14,7 +14,7 @@ Este repositório faz parte da minha jornada de aprendizado em Ciência de Dados
 Dentro de cada pasta de projeto, você encontrará:
 
 - **`data/`**: Dados brutos e processados;
-- **`docs/`**: Documentação técnica, incluindo dicionário de dados;
+- **`docs/`**: Documentação técnica, storytelling completo do projeto;
 - **`notebooks/`**: Jupyter Notebooks separados por etapas da análise;
 - **`src/`**: Scripts Python reutilizáveis para limpeza, visualização e funções auxiliares;
 - **`visualizations/`**: Gráficos exportados organizados por tipo de análise;

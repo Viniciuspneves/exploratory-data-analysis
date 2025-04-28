@@ -4,12 +4,18 @@
 
 Neste projeto, eu analiso dados sobre acidentes de trânsito em Nova York, ocorridos entre janeiro de 2021 e abril de 2023. O objetivo é entender melhor onde, quando e por que esses acidentes acontecem, identificando padrões como horários de pico, dias da semana e locais com maior incidência de colisões.
 
+## Explore a História Completa dos Acidentes
+
+Para entender os padrões, causas e o impacto humano dos acidentes em Nova York de forma detalhada e didática, acesse nossa análise completa em formato de storytelling:
+
+- **[Leia o Storytelling Completo Aqui](storytelling.md)**
+
 ## Estrutura do Repositório
 
 O repositório está organizado da seguinte forma:
 
-- [**`data/`**](./data/) Dados brutos e processados;
-- [**`docs/`**](./docs/) Documentação técnica, incluindo dicionário de dados;
+- [**`data/`**](./data/) Dados brutos e processados, documentação técnica, incluindo dicionário de dados;
+- [**`docs/`**](./docs/) Mapas interativos .html, storytelling completo do projeto;
 - [**`notebooks/`**](./notebooks/) Jupyter Notebooks separados por etapas da análise;
 - [**`src/`**](./src/) Scripts Python reutilizáveis para limpeza, visualização e funções auxiliares;
 - [**`visualizations/`**](./visualizations/): Gráficos exportados organizados por tipo de análise;
